@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Retail Sales Dashboard</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <div class="brand">
+  <img class="brand-logo" src="{{ url_for('static', filename='store.png') }}" alt="Store">
+  <div>Retail Sales Project Yahia</div>
+</div>
+
+      <div class="nav-links">
+        <a href="/">Dashboard</a>
+        <a href="/transactions">Transactions</a>
+        <a href="/analysis">Analysis</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div>Created by: Yahia Nahhas</div>
+    <div>
+      Yahia's Portfolio:
+      <a href="https://yahia-nahhas.com" target="_blank" rel="noopener noreferrer">https://yahia-nahhas.com</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

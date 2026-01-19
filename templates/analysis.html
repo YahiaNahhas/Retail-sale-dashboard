@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Analysis</h1>
+
+<div class="analysis-grid">
+
+  <div class="card section-card">
+    <div class="section-title">Best Month per Year (by Avg Sale)</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Year</th><th>Month</th><th>Avg Sale</th></tr>
+        </thead>
+        <tbody>
+          {% for r in best_month %}
+          <tr>
+            <td>{{ r["year"] }}</td>
+            <td>{{ r["month"] }}</td>
+            <td>{{ r["avg_sale"] }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card section-card">
+    <div class="section-title">Orders by Shift</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Shift</th><th>Total Orders</th></tr>
+        </thead>
+        <tbody>
+          {% for r in shift_orders %}
+          <tr>
+            <td>{{ r["shift"] }}</td>
+            <td>{{ r["total_orders"] }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card section-card">
+    <div class="section-title">Sales by Gender</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Gender</th><th>Total Sales</th><th>Orders</th></tr>
+        </thead>
+        <tbody>
+          {% for r in sales_by_gender %}
+          <tr>
+            <td>{{ r["gender"] }}</td>
+            <td>{{ r["total_sales"] }}</td>
+            <td>{{ r["orders"] }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

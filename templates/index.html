@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Retail Sales Dashboard</h1>
+
+<div class="kpis">
+  <div class="card kpi"><div class="label">Total Sales</div><div class="value">{{ kpis["total_sales"] }}</div></div>
+  <div class="card kpi"><div class="label">Total Orders</div><div class="value">{{ kpis["total_orders"] }}</div></div>
+  <div class="card kpi"><div class="label">Unique Customers</div><div class="value">{{ kpis["unique_customers"] }}</div></div>
+  <div class="card kpi"><div class="label">Avg Order Value</div><div class="value">{{ kpis["avg_order_value"] }}</div></div>
+</div>
+
+<h2>Sales by Category</h2>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr><th>Category</th><th>Net Sales</th><th>Orders</th></tr>
+    </thead>
+    <tbody>
+      {% for r in sales_by_category %}
+      <tr>
+        <td>{{ r["category"] }}</td>
+        <td>{{ r["net_sale"] }}</td>
+        <td>{{ r["total_orders"] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<h2>Top Customers</h2>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr><th>Customer</th><th>Total Sales</th></tr>
+    </thead>
+    <tbody>
+      {% for r in top_customers %}
+      <tr>
+        <td>{{ r["customer_id"] }}</td>
+        <td>{{ r["total_sales"] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
