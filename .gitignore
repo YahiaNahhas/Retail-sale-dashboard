@@ -1,0 +1,11 @@
+cat > .gitignore <<'EOF'
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+retail.db
+data/*.csv
+
+Retail-Sales-Analysis-SQL-Project--P1/
+EOF
